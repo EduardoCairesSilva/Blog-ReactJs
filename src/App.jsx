@@ -1,11 +1,28 @@
-import React from 'react'
+import React from 'react';
+import './index.css';
+
+function Header({ children }) {
+  return (
+    <header className='bg-white'>
+      <nav className='mx-auto flex items-center p-6 shadow-xl'>{children}</nav>
+    </header>
+  )
+}
+
+function HeaderLink({ href, children }) {
+  return (
+    <a href={href} className='font-semibold leading-6 ml-5 text-black'>{children}</a>
+  );
+}
 
 function App() {
   return (
-    <h1 className='text-3x1 font-bold underline'>
-      Hello world!
-    </h1>
-  )
+    <>
+      <Header>
+        <HeaderLink href='#'>Company</HeaderLink>
+      </Header>
+    </>
+  );
 }
 
 export default App
