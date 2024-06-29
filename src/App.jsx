@@ -1,28 +1,24 @@
-import React from 'react';
-import './index.css';
-
-function Header({ children }) {
-  return (
-    <header className='bg-white'>
-      <nav className='mx-auto flex items-center p-6 shadow-xl'>{children}</nav>
-    </header>
-  )
-}
-
-function HeaderLink({ href, children }) {
-  return (
-    <a href={href} className='font-semibold leading-6 ml-5 text-black'>{children}</a>
-  );
-}
+import Header from './components/Header';
+import FormBase from './components/FormBase';
+import { HiMagnifyingGlass } from "react-icons/hi2";
+import PostHeader from './components/PostHeader';
+import PostBody from './components/PostBody';
 
 function App() {
-  return (
-    <>
-      <Header>
-        <HeaderLink href='#'>Company</HeaderLink>
-      </Header>
-    </>
-  );
+    return (
+        <div>
+            <Header className="bg-white flex p-3 shadow-xl">
+                <h1 className="ml-5 italic text-lg font-bold relative top-4">FS34Blog</h1>
+                <FormBase className="ml-5">
+                    < HiMagnifyingGlass className='relative top-6 left-1' />
+                    <input type="text" className="rounded border-2 border-black" />
+                    <button className="border-2 border-black rounded ml-3 w-24">Entrar</button>
+                </FormBase>
+            </Header>
+            <PostHeader />
+            <PostBody />
+        </div>  
+    );
 }
 
-export default App
+export default App;
