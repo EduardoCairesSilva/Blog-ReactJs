@@ -1,13 +1,7 @@
 import React from 'react';
+import Header from './components/Header';
+import FormBase from './components/FormBase';
 import './index.css';
-
-function Header({ children }) {
-  return (
-    <header className='bg-white'>
-      <nav className='mx-auto flex items-center p-6 shadow-xl'>{children}</nav>
-    </header>
-  )
-}
 
 function HeaderLink({ href, children }) {
   return (
@@ -18,9 +12,12 @@ function HeaderLink({ href, children }) {
 function App() {
   return (
     <>
-      <Header>
-        <HeaderLink href='#'>Company</HeaderLink>
+      <Header className={'bg-red-300'}>
+      ghf
       </Header>
+        <FormBase>
+          {/* <HeaderLink /> */}
+        </FormBase>
     </>
   );
 }
