@@ -1,19 +1,21 @@
-import { useParams } from "react-router-dom";
+
 import Layout from "../components/Layout";
-import Post from "../components/Post";
-import posts from "../api/posts";
+import Post from '../components/Post';
+import {useParams} from 'react-router-dom';
+import posts from '../api/posts';
+import users from '../api/users';
 
-export default function AuthorPage() {
-    let params = useParams();
-    let post = posts.find((post) => {
-        return post.author.username === params.username
-    });
+export default function AuthorPage () {
 
-    return (
-        <Layout>
-            <Post>
-                <h1 className="text-3xl">Author: {post.author.name}</h1>
-            </Post>
-        </Layout>
-    )
+  let params = useParams();
+
+  let user = users.find(function (user) {
+    return user.username === params.username;
+  });
+
+  return (
+    <Layout>
+        <h1>Author: {user.name}</h1>
+    </Layout>
+  );
 }
